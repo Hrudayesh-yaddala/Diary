@@ -4,10 +4,23 @@ import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Entries = () => {
   const [diary, setEntries] = useState([]);
+  let [loading, setLoading] = useState(false);
 
+   // spinner
+   const load = () => {
+    return (
+      <div className={`flex justify-center items-center h-screen ${loading ? 'block' : 'hidden'}`}>
+        <div className="bg-white p-5 rounded-lg">
+          <BeatLoader loading={loading} className="text-cyan-900 text-3xl" />
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
   useEffect(() => {
     fetchEntries();
   }, []);
@@ -20,6 +33,7 @@ const Entries = () => {
         console.error("Token not found.");
         return;
       }
+      setLoading(true)
 
       const response = await axios.get(
         "https://busy-rose-moth-vest.cyclic.cloud/api/user/entries",
@@ -62,10 +76,16 @@ const Entries = () => {
       console.error("Error deleting entry:", error);
       toast.error("Failed to delete entry");
     }
+    finally{
+      setLoading(false)
+    }
   };
 
   return (
-    <div
+   <div>{
+     loading?load():(
+       <div>
+          <div
       className="bg-[#deb7ff] flex-grow text-center hover:bg-backImage focus:bg-startImage  bg-cover bg-center bg-no-repeat pt-5"
       style={{ backgroundImage: `url(${backImage})` }}
     >
@@ -127,6 +147,10 @@ const Entries = () => {
       </div>
       <div className="h-40 sm:h-32 md:h-34 lg:h-48 xl:h-50"></div>
     </div>
+       </div>
+     )
+   }
+   </div>
   );
 };
 

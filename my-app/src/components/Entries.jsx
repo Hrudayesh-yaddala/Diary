@@ -61,6 +61,9 @@ const Entries = () => {
     } catch (error) {
       console.log("Error fetching entries:", error);
     }
+    finally{
+      setLoading(false)
+    }
   };
   const handleDeleteEntry = async (id) => {
     try {
@@ -76,9 +79,7 @@ const Entries = () => {
       console.error("Error deleting entry:", error);
       toast.error("Failed to delete entry");
     }
-    finally{
-      setLoading(false)
-    }
+    
   };
 
   return (

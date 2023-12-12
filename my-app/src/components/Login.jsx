@@ -76,7 +76,7 @@ const Login = () => {
       {loading ? load(): (
         <div>
         <div className="p-4 bg-cover bg-center h-screen  bg-purple-200 flex-grow">
-{/*           style={{ backgroundImage: `url(${backImage})` }} */}
+          {/* style={{ backgroundImage: `url(${backImage})` }} */}
           <h1 className="text-2xl md:text-3xl lg:text-4xl text-center font-bold mb-6">Sign in</h1>
           <form onSubmit={handleSubmit} className="flex flex-col items-center">
             <input

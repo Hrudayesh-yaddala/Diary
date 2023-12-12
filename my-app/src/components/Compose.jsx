@@ -57,7 +57,7 @@ const Compose = () => {
     try {
       setLoading(true)
       const response = await axios.post(
-        "http://localhost:3000/compose",
+        "https://busy-rose-moth-vest.cyclic.cloud/compose",
         formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

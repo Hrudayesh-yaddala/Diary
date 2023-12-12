@@ -5,9 +5,9 @@ import { MdDelete } from "react-icons/md";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import BeatLoader from "react-spinners/BeatLoader";
-
 const Entries = () => {
   const [diary, setEntries] = useState([]);
+
   let [loading, setLoading] = useState(false);
 
    // spinner
@@ -27,16 +27,16 @@ const Entries = () => {
 
   const fetchEntries = async () => {
     try {
+      setLoading(true)
       const token = localStorage.getItem("token");
 
       if (!token) {
         console.error("Token not found.");
         return;
       }
-      setLoading(true)
 
       const response = await axios.get(
-        "https://busy-rose-moth-vest.cyclic.cloud/api/user/entries",
+        "http://localhost:3000/api/user/entries",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ const Entries = () => {
   const handleDeleteEntry = async (id) => {
     try {
       const response = await axios.delete(
-        `https://busy-rose-moth-vest.cyclic.cloud/api/user/entries/${id}`
+        `http://localhost:3000/api/user/entries/${id}`
       );
       if (response.status === 200) {
         toast.success(response.data.message);
@@ -79,17 +79,12 @@ const Entries = () => {
       console.error("Error deleting entry:", error);
       toast.error("Failed to delete entry");
     }
-    
   };
 
   return (
-   <div>{
-     loading?load():(
-       <div>
-          <div
-      className="bg-[#deb7ff] flex-grow text-center hover:bg-backImage focus:bg-startImage  bg-cover bg-center bg-no-repeat pt-5"
-      style={{ backgroundImage: `url(${backImage})` }}
-    >
+    <div className="bg-[#deb7ff] flex-grow text-center hover:bg-backImage focus:bg-startImage  bg-cover bg-center bg-no-repeat pt-5"
+    style={{ backgroundImage: `url(${backImage})` }}>
+      {loading? load():<div>
       <div className="container mx-auto">
         <div className="">
           <h1 className="text-3xl font-semibold mb-2 text-center top-5 text-black ">
@@ -147,11 +142,8 @@ const Entries = () => {
         </div>
       </div>
       <div className="h-40 sm:h-32 md:h-34 lg:h-48 xl:h-50"></div>
+    </div> }
     </div>
-       </div>
-     )
-   }
-   </div>
   );
 };
 

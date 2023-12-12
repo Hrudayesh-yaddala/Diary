@@ -1,4 +1,4 @@
-import backImage from "../Images/background.webp";
+// import backImage from "../Images/background.webp";
 import { useState } from "react";
 import axios from "axios";
 import {toast} from "react-hot-toast"
@@ -78,7 +78,7 @@ const Register = () => {
         <div>
           <div
       className="p-4 h-screen bg-purple-200 flex-grow">
-        style={{ backgroundImage: `url(${backImage})` }}
+{/*         style={{ backgroundImage: `url(${backImage})` }} */}
       <h1 className="text-2xl md:text-3xl lg:text-4xl text-center font-bold mb-6">
         Welcome to e-diary! <br />
         Let&apos;s create your free account.

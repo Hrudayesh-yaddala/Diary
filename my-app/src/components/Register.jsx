@@ -44,7 +44,7 @@ const Register = () => {
     else{
       try{
         setLoading(true);
-        const response = await axios.post("http://localhost:3000/api/user/register",data,{
+        const response = await axios.post("https://busy-rose-moth-vest.cyclic.cloud/api/user/register",data,{
         headers : {
           'Content-type' : 'application/json'
         }

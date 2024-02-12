@@ -96,7 +96,7 @@ const Register = () => {
         
         <div className="flex flex-col">
           <label htmlFor="email">Email</label>
-          <input className="p-2 border border-gray-500 rounded-md" type="email" name="email" id="firstname" onChange={handleChange}/>
+          <input className="p-2 border border-gray-500 rounded-md" type="email" name="email" id="email" onChange={handleChange}/>
         </div>
 
         <div className="flex flex-col">

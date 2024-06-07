@@ -36,7 +36,7 @@ const Login = () => {
     e.preventDefault();
     try{
       setLoading(true)
-      const response=await axios.post("https://busy-rose-moth-vest.cyclic.cloud/api/user/login",formData,{
+      const response=await axios.post("https://diary-f98q.onrender.com/api/user/login",formData,{
         headers : {
           'Content-type' : 'application/json'
         }
@@ -73,7 +73,7 @@ const Login = () => {
 
   return (
     <div>
-      {loading ? load(): (
+     
         <div>
         <div className="p-4 bg-cover bg-center h-screen  bg-purple-200 flex-grow">
           {/* style={{ backgroundImage: `url(${backImage})` }} */}
@@ -99,15 +99,17 @@ const Login = () => {
             />
             <button
               type="submit"
-              className=" text-white rounded px-4 py-2 mb-4 w-full md:w-80 lg:w-96 bg-purple-400 hover:bg-purple-300"
+              className=" text-white rounded px-4 py-2 mb-4 w-full md:w-80 lg:w-96 bg-purple-400 hover:bg-purple-600"
             >
-              Sign In
+          
+          {loading ? (<BeatLoader loading={loading} className="text-cyan-900 text-3xl" />) :  "Sign In"}
+             
             </button>
           </form>
           <p className="text-center">Dont have an account? <Link to="/Register" className="text-purple-800 hover:text-[#9338e4]">Sign-up here</Link></p>
         </div>
         </div>
-      )}
+      
     </div>
   );
 };

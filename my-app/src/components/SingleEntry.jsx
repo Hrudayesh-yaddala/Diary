@@ -15,7 +15,7 @@ const SingleEntry = () => {
 
   const fetchEntry = async () => {
     try {
-      const response = await axios.get(`https://busy-rose-moth-vest.cyclic.cloud/api/user/entries/${id}`);
+      const response = await axios.get(`https://diary-f98q.onrender.com/api/user/entries/${id}`);
       if(response.status===200){
       setEntry(response.data.entry);
       toast.success("Entry fetched Successfully")

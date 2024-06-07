@@ -36,7 +36,7 @@ const Entries = () => {
       }
 
       const response = await axios.get(
-        "https://busy-rose-moth-vest.cyclic.cloud/api/user/entries",
+        "https://diary-f98q.onrender.com/api/user/entries",
         {
           headers: {
             Authorization: `Bearer ${token}`,

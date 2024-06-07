@@ -44,7 +44,7 @@ const Register = () => {
     else{
       try{
         setLoading(true);
-        const response = await axios.post("https://busy-rose-moth-vest.cyclic.cloud/api/user/register",data,{
+        const response = await axios.post("https://diary-f98q.onrender.com/api/user/register",data,{
         headers : {
           'Content-type' : 'application/json'
         }
@@ -74,7 +74,7 @@ const Register = () => {
   }
   return (
     <div>
-      {loading ? load():(
+   
         <div>
           <div
       className="p-4 h-screen bg-purple-200 flex-grow">
@@ -110,7 +110,11 @@ const Register = () => {
         </div>
 
         {/* <button type="submit" className="bg-[#a86add] text-white rounded px-4 py-2 mb-4 w-full md:w-72 lg:w-52  hover:bg-[#9338e4]">Register</button> */}
-        <button type="submit" className="bg-purple-400 text-white rounded px-4 py-2 mb-4 sm:w-44 md:w-20 lg:w-52   hover:bg-purple-300">Register</button>      
+        <button type="submit" className="bg-purple-400 text-white rounded px-4 py-2 mb-4 sm:w-44 md:w-20 lg:w-52   hover:bg-purple-600">
+         {loading ? (<BeatLoader loading={loading} className="text-cyan-900 text-3xl" /> ): "Register"}
+       
+          
+          </button>      
       </form>
       <p className="text-center mt-5">
         Already have an account?{" "}
@@ -120,7 +124,7 @@ const Register = () => {
       </p>
     </div>
         </div>
-      )}
+    
     </div>
   );
 };

@@ -32,16 +32,3 @@ function Home() {
   );
 }
 export default Home;
-
-{
-  /* <div className="flex justify-center items-center h-screen bg-gray-100">
-<div className="relative w-1/4 bg-blue-200 p-8 rounded-l-lg">
-  <h1 className="text-2xl font-bold mb-4">Diary</h1>
-  <div className="flex space-x-4">
-    <button className="py-2 px-4 bg-blue-500 text-white rounded">New Entry</button>
-    <button className="py-2 px-4 bg-blue-500 text-white rounded">View All Entries</button>
-    <button className="py-2 px-4 bg-blue-500 text-white rounded">Journal Settings</button>
-  </div>
-</div>
-</div> */
-}

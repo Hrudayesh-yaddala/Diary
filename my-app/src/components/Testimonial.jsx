@@ -1,8 +1,7 @@
 const Testimonial = () => {
   return (
     <div>
-      {/* <!-- Container for demo purpose --> */}
-      {/* <!-- Container for demo purpose --> */}
+  
       <div className="container my-24 mx-auto md:px-6">
         {/* <!-- Section: Design Block --> */}
         <section className="mb-32 text-center">

@@ -56,6 +56,7 @@ app.post(
     const uploadedImages = [];
 
     try {
+      
       // Upload each image to Cloudinary
       const { comment } = req.body;
       if (!comment) {

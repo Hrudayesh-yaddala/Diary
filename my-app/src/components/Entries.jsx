@@ -68,7 +68,7 @@ const Entries = () => {
   const handleDeleteEntry = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/user/entries/${id}`
+        `https://diary-f98q.onrender.com/api/user/entries/${id}`
       );
       if (response.status === 200) {
         toast.success(response.data.message);
